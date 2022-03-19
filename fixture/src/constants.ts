@@ -9,6 +9,7 @@ export type RootStackParamList = {
   PaginatedList: undefined;
   Twitter: undefined;
   TwitterFlatList: undefined;
+  TwitterRestyle: undefined;
   TweetDetailScreen: TweetContentProps;
   Debug: undefined;
   Contacts: undefined;

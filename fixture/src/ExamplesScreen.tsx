@@ -53,6 +53,10 @@ export const ExamplesScreen = () => {
       destination: "TwitterCustomCellContainer",
     },
     { title: "Masonry", destination: "Masonry" },
+    {
+      title: "Twitter Restyle",
+      destination: "TwitterRestyle",
+    },
   ];
   return (
     <>
@@ -65,6 +69,7 @@ export const ExamplesScreen = () => {
           <Pressable
             style={styles.row}
             onPress={() => {
+              console.log(item.destination);
               navigate(item.destination);
             }}
             testID={item.title}

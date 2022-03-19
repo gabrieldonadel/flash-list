@@ -15,6 +15,7 @@ import { Messages, MessagesFlatList } from "./Messages";
 import TwitterBenchmark from "./twitter/TwitterBenchmark";
 import TwitterCustomCellContainer from "./twitter/CustomCellRendererComponent";
 import { Masonry } from "./Masonry";
+import TwitterRestyle from "./restyle/Twitter";
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -31,6 +32,11 @@ const NavigationTree = () => {
           <Stack.Screen
             name="TwitterFlatList"
             component={TwitterFlatList}
+            options={{ title: "Twitter" }}
+          />
+          <Stack.Screen
+            name="TwitterRestyle"
+            component={TwitterRestyle}
             options={{ title: "Twitter" }}
           />
           <Stack.Screen name="Contacts" component={Contacts} />

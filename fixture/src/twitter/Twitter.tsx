@@ -6,7 +6,11 @@ import {
   ActivityIndicator,
   ViewabilityConfig,
 } from "react-native";
-import { BlankAreaEventHandler, FlashList } from "@shopify/flash-list";
+import {
+  BlankAreaEventHandler,
+  FlashList,
+  useDataMultiplier,
+} from "@shopify/flash-list";
 import { FlashListPerformanceView } from "@shopify/react-native-performance-lists-profiler";
 
 import { DebugContext } from "../Debug";
@@ -39,6 +43,8 @@ const Twitter = ({
     itemVisiblePercentThreshold: 50,
     minimumViewTime: 1000,
   }).current;
+
+  const [data] = useDataMultiplier(tweets, 1000);
 
   return (
     <FlashListPerformanceView listName="Twitter">
@@ -82,7 +88,7 @@ const Twitter = ({
         ListEmptyComponent={Empty()}
         estimatedItemSize={150}
         ItemSeparatorComponent={Divider}
-        data={debugContext.emptyListEnabled ? [] : tweets}
+        data={debugContext.emptyListEnabled ? [] : data}
         initialScrollIndex={debugContext.initialScrollIndex}
         viewabilityConfig={viewabilityConfig}
         onViewableItemsChanged={(info) => {

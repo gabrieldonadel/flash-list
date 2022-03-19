@@ -10,7 +10,9 @@ import "react-native-gesture-handler";
 import React from "react";
 import { ListsProfiler } from "@shopify/react-native-performance-lists-profiler";
 import { Platform, UIManager } from "react-native";
+import { ThemeProvider } from "@shopify/restyle";
 
+import theme from "./restyle/Theme";
 import { DebugContextProvider } from "./Debug";
 import NavigationTree from "./NavigationTree";
 
@@ -30,9 +32,11 @@ const App = () => {
         console.log(`Blank area: ${Math.max(offsetStart, offsetEnd)}`);
       }}
     >
-      <DebugContextProvider>
-        <NavigationTree />
-      </DebugContextProvider>
+      <ThemeProvider theme={theme}>
+        <DebugContextProvider>
+          <NavigationTree />
+        </DebugContextProvider>
+      </ThemeProvider>
     </ListsProfiler>
   );
 };
