@@ -102,6 +102,11 @@ export interface FlashListProps<TItem> extends ScrollViewProps {
   ItemSeparatorComponent?: React.ComponentType<any> | null | undefined;
 
   /**
+   * Allows custom logic to override when a separator should be rendered
+   */
+  overrideItemSeparator?: (leadingItem: TItem, trailingItem: TItem) => boolean | null | undefined;
+
+  /**
    * Rendered when the list is empty. Can be a React Component (e.g. `SomeComponent`), or a React element (e.g. `<SomeComponent />`).
    */
   ListEmptyComponent?:
