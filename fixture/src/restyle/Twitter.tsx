@@ -19,8 +19,8 @@ const TwitterRestyle = () => {
     ref,
     (res) => {
       alert(res.formattedString);
-    }
-    // { speedMultiplier: BenchConfig.speedMultiplier }
+    },
+    { speedMultiplier: BenchConfig.speedMultiplier }
   );
   const [data] = useDataMultiplier(tweets, 1000);
   return (
